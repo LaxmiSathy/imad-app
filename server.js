@@ -10,7 +10,7 @@ var articleOne = {
     heading: 'Article One Page',
     date: 'August 9, 2017',
     content: `<p>
-                    Content for the Article One Page goes here.
+                    Content for the Article One Page goes here.New content gets updated here.
               </p>`
  
 };
