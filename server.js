@@ -21,7 +21,7 @@ var articles = {
                         Content for the Article Two Page goes here. New content gets updated here.
                   </p>`
     },
-    'articlethree': {
+    'article-three': {
         title: 'Article Three | Laxmi Sathy',
         heading: 'Article Three Page',
         date: 'August 11, 2017',
@@ -72,7 +72,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get(':/articleName', function(req, res){
+app.get('/:articleName', function(req, res){
     var articleName = req.params.articleName;
     res.send(createTemplate(articles[articleName]));
 });
