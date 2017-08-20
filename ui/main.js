@@ -1,16 +1,14 @@
-console.log('Loaded!');
-alert('Hi I\'m a JavaScript');
-// change the text 
-var element = document.getElementById('main-text');
-element.innerHTML = "New Content from Java Script";
-var img = document.getElementById('madi');
-var marginLeft = 0;
-img.onclick = function() {
-    function moveRight(){
-        marginLeft = marginLeft + 5;
-        img.style.marginLeft = marginLeft + 'px';
-        
-    }
-    var interval = setInterval(moveRight, 50);
+//counter code
+var button = document.getElementById('counter');
+var counter = 0;
+button.onclick = function() {
+    //Make request to the counter end point
+    
+    //capture the response and store it in variable
+    
+    //Render the response in correct span
+    counter = counter + 1;
+    var span = document.getElementById('count');
+    span.innerHTML = span.toString();
     
 };
