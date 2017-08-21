@@ -44,11 +44,11 @@ button.onclick = function() {
                 for (var i=0; i<names.length; i++) {
                     list += '<li>' + names[i] + '</li>';
                 }
-                var sub = document.getElementById('subname');
+                var sub = document.getElementById('namelist');
                 sub.innerHTML = list;
                 
             }
-        };
+        }
     
     
     //Make request to the counter end point
