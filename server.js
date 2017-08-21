@@ -106,7 +106,7 @@ app.get('/submit-name', function(req,res) {
     res.send(JSON.stringify(names));
     
     
-})
+});
 
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
