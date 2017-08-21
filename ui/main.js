@@ -24,8 +24,7 @@ button.onclick = function() {
     
   };
   // Submit name script
-  var nameInput = document.getElementById('name');
-  var name = nameInput.value;
+  
   var submit = document.getElementById('submit_btn');
   submit.onclick = function() {
         //Create request object
@@ -53,6 +52,8 @@ button.onclick = function() {
     
     
     //Make request to the counter end point
+    var nameInput = document.getElementById('name');
+    var name = nameInput.value;
     request.open('GET', 'http://laxmisathy63.imad.hasura-app.io/submit-name?name=' + name, true);
     request.send(null);
   };
