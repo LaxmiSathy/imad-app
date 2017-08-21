@@ -49,6 +49,7 @@ button.onclick = function() {
                 
             }
         }
+        };
     
     
     //Make request to the counter end point
