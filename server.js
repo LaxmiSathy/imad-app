@@ -97,8 +97,9 @@ app.get('/ui/madi.png', function (req, res) {
 });
 
 var names=[];
-app.get('/submit-name/:name', function(req,res) {
-    var name = req.params.name;
+// url query like submit-name?name=laxmi
+app.get('/submit-name', function(req,res) {
+    var name = req.query.name;
     
     names.push(name);
     //JSON - to stringify the objects
