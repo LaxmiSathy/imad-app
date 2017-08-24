@@ -82,6 +82,23 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+var pool = new Pool('config');
+app.get('/test-db', function(req, res) {
+  // make a select request
+  
+  // send the response of the select query
+  
+  pool.query('Select * from article', function(err, result) {
+      
+  if(err)
+    { res.status(500).send(err.toString);}
+  else
+     { res.send(JSON.strigify.result()); }
+      
+  });
+
+});
+
 var counter=0;
 app.get('/counter', function(req,res) {
   counter = counter + 1;
