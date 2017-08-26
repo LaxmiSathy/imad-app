@@ -45,7 +45,7 @@ function createTemplate(data) {
                 <div>
                     ${content}
                     <div> 
-                        <p> Enter your comments here..</p> <br/>
+                        <p> Enter your comments here..</p>
                         <input type="text" id="comment">
                         </input>
                     </div>
