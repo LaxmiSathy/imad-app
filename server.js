@@ -44,12 +44,11 @@ function createTemplate(data) {
                 </div>
                 <div>
                     ${content}
-                    //Comments box
                     <div> 
                         <input type="text" id="comment">
                         </input>
                     </div>
-                    // list out comments
+                    
                     <div>
                     
                     </div>
