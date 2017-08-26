@@ -48,6 +48,8 @@ function createTemplate(data) {
                         <p> Enter your comments here..</p>
                         <input type="text" id="comment">
                         </input>
+                        <input type="submit" value="Submit" id="submit_cmt">
+                        </input>
                     </div>
                     
                     <div>
