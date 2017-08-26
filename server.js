@@ -16,32 +16,6 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-var articles = { 
-    'article-one': {
-        title: 'Article One | Laxmi Sathy',
-        heading: 'Article One Page',
-        date: 'August 9, 2017',
-        content: `<p>
-                    Content for the Article One Page goes here. New content gets updated here.
-              </p>`},
-    'article-two': {
-        title: 'Article Two | Laxmi Sathy',
-        heading: 'Article Two Page',
-        date: 'August 10, 2017',
-        content: `<p>
-                        Content for the Article Two Page goes here. New content gets updated here.
-                  </p>`
-    },
-    'article-three': {
-        title: 'Article Three | Laxmi Sathy',
-        heading: 'Article Three Page',
-        date: 'August 11, 2017',
-    content: `<p>
-                    Content for the Article One Page goes here.New content gets updated here.
-              </p>`
-    }
-};
-
 function createTemplate(data) {
     var title = data.title;
     var heading = data.heading;
@@ -70,6 +44,16 @@ function createTemplate(data) {
                 </div>
                 <div>
                     ${content}
+                    //Comments box
+                    <div> 
+                        <input type="text" id="comment">
+                        </input>
+                    </div>
+                    // list out comments
+                    <div>
+                    
+                    </div>
+                    
                 </div>
         </div>
     </body>
