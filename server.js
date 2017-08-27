@@ -16,12 +16,12 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-function createTemplate(data1,data2 ) {
-    var title = data1.title;
-    var heading = data1.heading;
-    var date = data1.date;
-    var content = data1.content;
-    var comment = data2.comment;
+function createTemplate(data) {
+    var title = data.title;
+    var heading = data.heading;
+    var date = data.date;
+    var content = data.content;
+    var comment = data.comment;
     var htmlTemplate = `
     <html>
         <head>
@@ -120,28 +120,28 @@ app.get('/articles/:articleName', function(req, res){
             }
             else {
                 var articleData = result.rows[0];
+                pool.query("Select comment from myarticle_comments as a, myarticle as b  WHERE b.title=$1 AND a.article_id= b.id", [req.params.articleName], function(err, result1) {
+                if(err) {
+                    res.status(500).send(err.toString());
+                } else {
+                if(result1.rows.length===0){
+                res.status(404).send('No Comment yet.');
+                 } else {
+                articleData += result1.rows;
+                res.send(createTemplate(articleData));
+                }
+                }
+                });
                 
             }
         }
     });
     
     // query for comments of the article
-    pool.query("Select comment from myarticle_comments as a, myarticle as b  WHERE b.title=$1 AND a.article_id= b.id", [req.params.articleName], function(err, result1) {
-        if(err) {
-            res.status(500).send(err.toString());
-        } else {
-            if(result1.rows.length===0){
-                res.status(404).send('No Comment yet.');
-            }
-            else {
-                var articleComment = result1.rows;
-                
-            }
-        }
-    });
     
     
-    res.send(createTemplate(articleData, articleComment));
+    
+    
 });
 
 app.get('/ui/style.css', function (req, res) {
