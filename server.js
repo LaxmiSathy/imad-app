@@ -41,7 +41,7 @@ function createTemplate(data) {
                    ${heading}
                 </h3>
                 <div>
-                    ${date.toDateString()}
+                    ${date}
                 </div>
                 <div>
                     ${content}
@@ -136,10 +136,6 @@ app.get('/articles/:articleName', function(req, res){
             }
         }
     });
-    
-    // query for comments of the article
-    
-    
     
     
 });
