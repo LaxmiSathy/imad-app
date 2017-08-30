@@ -120,21 +120,12 @@ app.get('/articles/:articleName', function(req, res){
             }
             else {
                 var articleData = result.rows[0];
-                pool.query("Select comment from myarticle_comments as a, myarticle as b  WHERE b.title=$1 AND a.article_id= b.id", [req.params.articleName], function(err, result1) {
-                if(err) {
-                    res.status(500).send(err.toString());
-                } else {
-                if(result1.rows.length===0){
-                res.status(404).send('No Comment yet.');
-                 } else {
-                articleData += result1.rows;
                 res.send(createTemplate(articleData));
                 }
-                }
-                });
+           }
                 
-            }
         }
+        
     });
     
     
