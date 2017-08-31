@@ -1,9 +1,9 @@
 //Username Password login script
+var username = document.getElementById('username').value;
 function display() {
       var name = document.getElementById('guest');
       var bodyContent =document.getElementById('content');
-      var user = document.getElementById('username').value;
-      name.innerHTML = 'Welcome' + user;
+      name.innerHTML = 'Welcome ' + username;
       var newContent = '<p> Check articles listing in <a href='/'>Home Page</a></p>';
       bodyContent.innerHTML = newContent;
                 
@@ -35,7 +35,7 @@ function display() {
   var submit = document.getElementById('login');
   submit.onclick = function(){
     
-    var username = document.getElementById('username').value;
+    
     var password = document.getElementById('password').value;
     
     request.open('POST', 'http://laxmisathy63.imad.hasura-app.io/login', true);
