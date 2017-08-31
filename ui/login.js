@@ -1,5 +1,6 @@
 //Username Password login script
 var username = document.getElementById('username').value;
+
 function display() {
       var name = document.getElementById('guest');
       var bodyContent =document.getElementById('content');
@@ -37,7 +38,8 @@ function display() {
     
     
     var password = document.getElementById('password').value;
-    
+    console.log(username);
+    console.log(password);
     request.open('POST', 'http://laxmisathy63.imad.hasura-app.io/login', true);
     request.setRequestHeader('Content-Type', 'application/json');
     request.send(JSON.stringify({username:username, password:password}));
