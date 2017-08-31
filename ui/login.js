@@ -1,7 +1,7 @@
 //Username Password login script
   
   //Create request object
-  var newContent = '<p> Check articles listing in <a href='/'>Home Page</a></p>'
+  
   
   var request = new XMLHttpRequest();
     
@@ -14,6 +14,7 @@
                 var name = document.getElementById('guest');
                 var bodyContent =document.getElementById('content');
                 name.innerHTML = 'Welcome' + username;
+                var newContent = '<p> Check articles listing in <a href='/'>Home Page</a></p>'
                 bodyContent.innerHTML = newContent;
                 
                 
