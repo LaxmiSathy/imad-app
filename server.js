@@ -99,6 +99,35 @@ app.post('/create-user', function(req,res){
    });
 });
 
+app.post('/login', function(req,res){
+   var username= req.body.username;
+   var password = req.body.password;
+   
+   //check the username if exist in wp_user table
+   pool.query("SELECT * FROM wp_user WHERE username=$1", [username],  function(err,result){
+      if(err){
+          res.status(500).send(err.toString());
+      } else {
+          if (result.rows.length===0){
+              res.status(403).send('Invalid Username or Password')
+          } else {
+              // username exist in the table, check if password matches
+              var dbString = result.rows[0].password;
+              var salt = dbString.split('$').[2];
+              var hashedPassword = hash(password,salt);
+              if (hashedPassword === dbString){
+                  //password matches
+                  res.send("Valid credentials. User logged in");
+              } else {
+                  res.status(403).send("Invalid Password");
+              }
+          }
+          
+      }
+       
+   });
+    
+});
 var pool = new Pool(config);
 app.get('/test-db', function(req, res) {
   // make a select request
