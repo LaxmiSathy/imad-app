@@ -21,7 +21,7 @@ function display() {
             //Take some action
             if (request.status === 200){
                 alert('Logged in successfully');
-                function display();
+                display();
                 
             } else if (request.status===403){
                 alert('Invalid username or password');
