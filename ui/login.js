@@ -1,6 +1,7 @@
 //Username Password login script
   
   //Create request object
+  var newContent = '<p> Check articles listing in <a href='/'>Home Page</a></p>'
   
   var request = new XMLHttpRequest();
     
@@ -10,6 +11,12 @@
             //Take some action
             if (request.status === 200){
                 alert('Logged in successfully');
+                var name = document.getElementById('guest');
+                var bodyContent =document.getElementById('content');
+                name.innerHTML = 'Welcome' + username;
+                bodyContent.innerHTML = newContent;
+                
+                
             } else if (request.status===403){
                 alert('Invalid username or password');
             } else if (request.status ===500){
@@ -24,8 +31,6 @@
     
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
-    console.log(username);
-    console.log(password);
     
     request.open('POST', 'http://laxmisathy63.imad.hasura-app.io/login', true);
     request.setRequestHeader('Content-Type', 'application/json');
