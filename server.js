@@ -113,7 +113,7 @@ app.post('/login', function(req,res){
           } else {
               // username exist in the table, check if password matches
               var dbString = result.rows[0].password;
-              var salt = dbString.split('$').[2];
+              var salt = dbString.split('$')[2];
               var hashedPassword = hash(password,salt);
               if (hashedPassword === dbString){
                   //password matches
