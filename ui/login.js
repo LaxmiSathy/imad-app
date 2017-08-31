@@ -6,7 +6,8 @@ function display() {
       var bodyContent =document.getElementById('content');
       var username = document.getElementById('username').value;
       name.innerHTML = 'Welcome ' + username;
-      bodyContent.innerHTML = '<p> Check articles listing in <a href='/'>Home Page</a></p>';
+      bodyContent.innerHTML = '<p> Check articles listing in <a href='/'> Home Page </a></p>';
+      console.log(bodyContent);
                 
   }
        
