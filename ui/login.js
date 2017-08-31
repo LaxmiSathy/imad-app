@@ -1,4 +1,14 @@
 //Username Password login script
+function display() {
+      var name = document.getElementById('guest');
+      var bodyContent =document.getElementById('content');
+      var user = document.getElementById('username').value;
+      name.innerHTML = 'Welcome' + user;
+      var newContent = '<p> Check articles listing in <a href='/'>Home Page</a></p>';
+      bodyContent.innerHTML = newContent;
+                
+  }
+       
   
   //Create request object
   
@@ -11,12 +21,7 @@
             //Take some action
             if (request.status === 200){
                 alert('Logged in successfully');
-                var name = document.getElementById('guest');
-                var bodyContent =document.getElementById('content');
-                name.innerHTML = 'Welcome' + username;
-                var newContent = '<p> Check articles listing in <a href='/'>Home Page</a></p>'
-                bodyContent.innerHTML = newContent;
-                
+                function display();
                 
             } else if (request.status===403){
                 alert('Invalid username or password');
@@ -38,5 +43,5 @@
     request.send(JSON.stringify({username:username, password:password}));
   };
   
-  
+           
   //Username Password register script
