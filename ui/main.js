@@ -67,7 +67,7 @@ button.onclick = function() {
       
       //capture response
       request.onreadystatechange = function(){
-          if(request.readyState=== XMLHTTPRequest.DONE){
+          if(request.readyState=== XMLHttpRequest.DONE){
               //get the user name from check login
               if(request.status===200){
                   var name1 = request.responseText;
