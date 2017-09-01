@@ -6,7 +6,13 @@
   
   var request = new XMLHttpRequest();
     
-    //capture the response and store it in variable
+    
+    
+  
+  var submit = document.getElementById('login');
+  submit.onclick = function(){
+      
+      //capture the response and store it in variable
     request.onreadystatechange = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
             //Take some action
@@ -22,10 +28,6 @@
         }
     };
     
-  
-  var submit = document.getElementById('login');
-  submit.onclick = function(){
-    
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
     
@@ -36,12 +38,15 @@
   
            
   //Username Password signup script
-  //Create request object
   
   
-  var request = new XMLHttpRequest();
-    
-    //capture the response and store it in variable
+  
+   
+  
+  var sub = document.getElementById('signup');
+  sub.onclick = function(){
+      
+       //capture the response and store it in variable
     request.onreadystatechange = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
             //Take some action
@@ -57,9 +62,6 @@
         }
     };
     
-  
-  var sub = document.getElementById('signup');
-  sub.onclick = function(){
     
     var username = document.getElementById('uname').value;
     var password = document.getElementById('pwd').value;
