@@ -119,7 +119,7 @@ app.post('/login', function(req,res){
           res.status(500).send(err.toString());
       } else {
           if (result.rows.length===0){
-              res.status(403).send('Invalid Username or Password')
+              res.status(403).send('Invalid Username or Password');
           } else {
               // username exist in the table, check if password matches
               var dbString = result.rows[0].password;
@@ -146,6 +146,22 @@ app.post('/login', function(req,res){
 
 app.get('/check-login', function(req,res){
    if(req.session && req.session.auth && req.session.auth.userId){
+       
+       pool.query("SELECT username FROM wp_user WHERE user_id=$1", [req.session.auth.userId], function(err,result){
+          if(err){
+              res.status(500).send(err.toString());
+          } else {
+              if(result.rows.length===0){
+                  res.send("Guest");
+              }
+              else {
+                  res.send(result.rows[0].username);
+              }
+              
+          }
+           
+       });
+       
        res.send('true' + req.session.auth.userId.toString());
    } else {
        res.send('false');
