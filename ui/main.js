@@ -71,7 +71,7 @@ button.onclick = function() {
               //get the user name from check login
               if(request.status===200){
                   var name1 = request.responseText;
-                  var display = document.getElementById('guest');
+                  var display = document.getElementById('guestname');
                   display.innerHTML = name1;
               }
           }
