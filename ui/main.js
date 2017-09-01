@@ -61,8 +61,13 @@ button.onclick = function() {
   //check user or guest
   
   function guest(){
-      //request to the check-login end point
       
+      // create request object
+      var request = new XMLHttpRequest();
+      
+      //request to the check-login end point
+      request.open('GET', 'http://laxmisathy63.imad.hasura-app.io/check-login', true);
+      request.send(null);
       //capture the response
       
       //render the name
