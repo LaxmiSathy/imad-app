@@ -61,8 +61,8 @@
   var sub = document.getElementById('signup');
   sub.onclick = function(){
     
-    var username = document.getElementById('username').value;
-    var password = document.getElementById('password').value;
+    var username = document.getElementById('uname').value;
+    var password = document.getElementById('pwd').value;
     
     request.open('POST', 'http://laxmisathy63.imad.hasura-app.io/create-user', true);
     request.setRequestHeader('Content-Type', 'application/json');
