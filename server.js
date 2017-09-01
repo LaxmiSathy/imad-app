@@ -164,7 +164,7 @@ app.get('/check-login', function(req,res){
        
        // res.send('true' + req.session.auth.userId.toString());
    } else {
-       res.send('false');
+       res.send('Guest');
    }
 });
 
