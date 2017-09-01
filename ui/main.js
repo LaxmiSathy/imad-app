@@ -65,13 +65,25 @@ button.onclick = function() {
       // create request object
       var request = new XMLHttpRequest();
       
+      //capture response
+      request.onreadystatechange = function(){
+          if(request.readyState=== XMLHTTPRequest.DONE){
+              //get the user name from check login
+              if(request.status===200){
+                  var name1 = request.responseText;
+              }
+          }
+      }
+      
+      
+      
       //request to the check-login end point
       request.open('GET', 'http://laxmisathy63.imad.hasura-app.io/check-login', true);
       request.send(null);
-      //capture the response
+      
       
       //render the name
-      var name1 = 'user1';
+      
       var display = document.getElementById('guest');
       display.innerHTML = name1;
   }
