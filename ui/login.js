@@ -1,18 +1,7 @@
 //Username Password login script
 
 
-function display() {
-      var name = document.getElementById('guest');
-      var bodyContent =document.getElementById('content');
-      var username = document.getElementById('username').value;
-      name.innerHTML = 'Welcome ' + username;
-      bodyContent.innerHTML = '<p>' + 'Check articles listing in' +  '<a href="'/'">' + 'Home Page' + '</a></p>';
-      console.log(bodyContent);
-                
-  }
-       
-  
-  //Create request object
+//Create request object
   
   
   var request = new XMLHttpRequest();
