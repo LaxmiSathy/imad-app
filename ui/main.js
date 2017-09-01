@@ -71,6 +71,8 @@ button.onclick = function() {
               //get the user name from check login
               if(request.status===200){
                   var name1 = request.responseText;
+                  var display = document.getElementById('guest');
+                  display.innerHTML = name1;
               }
           }
       }
@@ -81,10 +83,5 @@ button.onclick = function() {
       request.open('GET', 'http://laxmisathy63.imad.hasura-app.io/check-login', true);
       request.send(null);
       
-      
-      //render the name
-      
-      var display = document.getElementById('guest');
-      display.innerHTML = name1;
   }
   
