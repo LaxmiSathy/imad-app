@@ -58,5 +58,16 @@ button.onclick = function() {
     request.send(null);
   };
   
+  //check user or guest
   
+  function guest(){
+      //request to the check-login end point
+      
+      //capture the response
+      
+      //render the name
+      var name1 = 'user1';
+      var display = document.getElementById('guest');
+      display.innerHTML = name1;
+  }
   
