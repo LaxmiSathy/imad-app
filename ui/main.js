@@ -75,7 +75,7 @@ button.onclick = function() {
                   display.innerHTML = name1;
               }
           }
-      }
+      };
       
       
       
@@ -85,3 +85,4 @@ button.onclick = function() {
       
   }
   
+  guest();
